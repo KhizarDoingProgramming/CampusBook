@@ -1,10 +1,8 @@
-// Dark Mode Logic
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggleBtn = document.getElementById('theme-toggle');
     const root = document.documentElement;
     const icon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
 
-    // Check local storage for theme preference
     const currentTheme = localStorage.getItem('theme') || 'light';
     root.setAttribute('data-theme', currentTheme);
     if (icon) {
@@ -21,11 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Chat Widget Logic
     window.openChat = function(name, avatar) {
         let chatWidget = document.getElementById('chat-widget');
         if (!chatWidget) {
-            // Create chat widget if it doesn't exist
             chatWidget = document.createElement('div');
             chatWidget.id = 'chat-widget';
             chatWidget.className = 'chat-widget open';
@@ -62,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
         input.value = '';
         body.scrollTop = body.scrollHeight;
         
-        // Auto reply simulation
         setTimeout(() => {
             const reply = document.createElement('div');
             reply.className = 'msg-bubble msg-received';
